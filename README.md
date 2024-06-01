@@ -1,2 +1,4 @@
-# PortfolioDev8
-Project to gain more visibility and develop new skills
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
