@@ -1,5 +1,6 @@
 import "./hero.scss"
 import { animate, motion } from "framer-motion"
+import ImageSlider from "./slider/ImageSlider";
 
 const textVariants = {
     initial: {
@@ -62,7 +63,7 @@ const Hero = () => {
                 Write Content Creator Influencer
             </motion.div>
             <div className="imageContainer">
-                <img src="./DevOmar2.png" alt="" />
+                <ImageSlider/>
             </div>
         </div>
     )

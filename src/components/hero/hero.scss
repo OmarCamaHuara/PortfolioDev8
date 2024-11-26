@@ -18,16 +18,17 @@
             flex-direction: column;
             justify-content: center;
             gap: 40px;
+            
+            @include mobile{
+                height: 40%;
+                width: 100%;
+                gap: 20px;
+                align-items: center;
+                text-align: center;
+            }
         }
 
-        @include mobile{
-            height: 50%;
-            width: 100%;
-            gap: 20px;
-            align-items: center;
-            text-align: center;
-            
-        }
+        
 
         h2{
             font-size: 30px;
@@ -44,6 +45,12 @@
         }
 
         .buttons{
+            @include mobile{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
             button{
                 padding: 20px;
                 border: 1px solid white;
@@ -51,17 +58,25 @@
                 background-color: transparent;
                 color: white;
                 margin-right: 20px;
+
+                @include mobile{
+                    margin: 5px;
+                }
             }
 
         }
 
-        img{
+        img {
             width: 50px;
         }
     }
 
     .imageContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         height: 100%;
+        width: 42%;
         position: absolute;
         top: 0;
         right: 0;
@@ -71,12 +86,7 @@
             width: 100%;
             top: unset;
             bottom: 0;
-        }
-
-        img {
-            width: 70%;
-            height: 100%;
-            object-fit: cover;
+            
         }
 
     }

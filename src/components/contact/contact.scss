@@ -7,7 +7,6 @@
    display: flex;
    align-items: center;
    gap: 50px;
-   border: blue solid 2px;
 
    @include mobile{
     width: 100%;
@@ -44,50 +43,60 @@
    }
 
    .formContainer{
-    flex: 1;
-    position: relative;
+        flex: 1;
+        position: relative;
 
-    @include mobile{
-        padding: 50px;
-        width: 100%;
-    }
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
 
-    .phoneSvg {
-        stroke: orange;
-        position: absolute;
-        margin: auto;
-        z-index: -1;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;   
-        
-        input, textarea{
-            padding: 20px;
-            background-color: transparent;
-            border: 1px solid white;
-            color: white;
-            border-radius: 5px;
+        .phoneSvg {
+            stroke: orange;
+            position: absolute;
+            margin: auto;
+            z-index: -1;
 
             @include mobile{
-                padding: 10px;
+                width: 100%;
             }
         }
 
-        button {
-            padding: 20px;
-            border: none;
-            background-color: orange;
-            cursor: pointer;
-            font-weight: 500;
-            border-radius: 5px;
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;   
 
-            @include mobile{                
-                padding: 10px;
+            @include mobile{
+                width: 70%;
+            }
+            
+            input, textarea{
+                padding: 20px;
+                background-color: transparent;
+                border: 1px solid white;
+                color: white;
+                border-radius: 5px;
+
+                @include mobile{
+                    padding: 10px;
+                }
+            }
+
+            button {
+                padding: 20px;
+                border: none;
+                background-color: orange;
+                cursor: pointer;
+                font-weight: 500;
+                border-radius: 5px;
+
+                @include mobile{                
+                    padding: 10px;
+                }
             }
         }
     }
-}
 }
