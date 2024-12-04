@@ -5,34 +5,34 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion"
 const item = [
     {
         id: 1,
-        title: "React Commerce",
-        img: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quisquam.",
+        title: "Tech Reviews e DIY: Minhas Aventuras.",
+        img: "./projects/DYLL.webp",
+        desc: "Compartilhando reviews de produtos, tutoriais de reparos e insights de desenvolvimento, explorando o mundo da tecnologia através de vídeos envolventes.",
     },
     {
         id: 2,
-        title: "Next.js Commerce Delivery",
-        img: "https://images.pexels.com/photos/10619092/pexels-photo-10619092.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quisquam.",
+        title: "IA em Foco: As Novidades do Momento",
+        img: "./projects/ia.webp",
+        desc: "Atualizando sobre as últimas inovações em IA, novos modelos e avanços que estão moldando o futuro tecnológico.",
     },
     {
         id: 3,
-        title: "Vanilla JS App",
-        img: "https://images.pexels.com/photos/11161261/pexels-photo-11161261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quisquam.",
+        title: "E-commerce na Prática: Minha Jornada",
+        img: "./projects/MercadoLibre.webp",
+        desc: "Explorando o mundo das vendas online, compartilhando dicas essenciais e desenvolvendo ferramentas com a API do Mercado Livre.",
     },
     {
         id: 4,
-        title: "Music App",
-        img: "https://images.pexels.com/photos/13003485/pexels-photo-13003485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quisquam.",
+        title: "Mãos à Obra com Arduino e Raspberry Pi",
+        img: "./projects/Ardu.webp",
+        desc: "Iniciando no universo da eletrônica, criando projetos que automatizam casas e exploram novas possibilidades tecnológicas.",
     },
-    {
-        id: 5,
-        title: "Social App",
-        img: "https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quisquam.",
-    },
+    // {
+    //     id: 5,
+    //     title: "Social App",
+    //     img: "https://images.pexels.com/photos/1092671/pexels-photo-1092671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quisquam.",
+    // },
 ]
 
 const Single = ({item}) => {
@@ -54,7 +54,7 @@ const Single = ({item}) => {
                     <motion.div className="textContainer" style={{ y }}>
                         <h1>{item.title}</h1>
                         <p>{item.desc}</p>
-                        <button>Read More</button>
+                        <button>Explorar Mais</button>
                     </motion.div>
                 </div>
             </div>
@@ -80,7 +80,7 @@ const Portfolio = () => {
     return (
         <div className="portfolio">
             <div className="progress">
-                <h1>Featured Works</h1>
+                <h1>Personal Projects</h1>
                 <motion.div className="progressBar" style={{ scaleX }}></motion.div>
             </div>
             {item.map((item) => (

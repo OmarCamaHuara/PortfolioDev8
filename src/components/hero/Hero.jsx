@@ -1,6 +1,7 @@
 import "./hero.scss"
+import React, { useState } from "react";
 import { animate, motion } from "framer-motion"
-import ImageSlider from "./slider/ImageSlider";
+import ImageSlider from "./sliderMe/ImageSlider";
 
 const textVariants = {
     initial: {
@@ -30,14 +31,34 @@ const sliderVariants = {
         x: 0,
     },
     animate: {
-        x: "-220%",
+        x: "-100%",
         transition: {
             repeat: Infinity,
-            repeatType: "mirror",
+            repeatType: "loop",
             duration: 20,
+            ease: "linear"
         },
     },
 };
+
+const techIcons = [
+    './skills/azure.svg',
+    './skills/css.svg',
+    './skills/figma.svg',
+    './skills/github.svg',
+    './skills/hibernate.svg',
+    './skills/intellij.svg',
+    './skills/java.svg',
+    './skills/javascript.svg',
+    './skills/linux.svg',
+    './skills/microsoft-sql-server.svg',
+    './skills/spring-boot.svg',
+    './skills/visualSC.svg',
+    './skills/sass-1.svg',
+    './skills/apacheCamel.svg',
+    './skills/Tasy.svg',
+    './skills/freemarker.png',
+]
 
 const Hero = () => {
     return (
@@ -48,19 +69,26 @@ const Hero = () => {
                             initial="initial"
                             animate="animate">
                     <motion.h2 variants={textVariants}>Omar Cama Huarahuara</motion.h2>
-                    <motion.h1 variants={textVariants}>Backend Dev. and Scrum Master</motion.h1>
+                    <motion.h1 variants={textVariants}>Backend Dev. and ...</motion.h1>
+                    <motion.p variants={textVariants}>Desenvolvedor Backend apaixonado por criar soluções que impactam a vidas das pessoas, entusiasta de educação, IA e robotica.</motion.p>
                     <motion.div variants={textVariants} className="buttons">
-                        <motion.button variants={textVariants}>See the Lastest Works</motion.button>
-                        <motion.button variants={textVariants}>Contact me</motion.button>
+                        <motion.button variants={textVariants}><a href="#Services">Experiência de trabalho recente</a></motion.button>
+                        <motion.button variants={textVariants}>
+                            <a href="https://drive.google.com/file/d/10rAcIJM_kj40kf8HZBRsTNEk506kKtMX/view?usp=sharing" target="_blank" rel="noopener noreferrer">Downland CV</a>
+                            </motion.button>
                     </motion.div>
                     <motion.img variants={textVariants} animate="scrollButton" src="./scroll.png" alt="" />
                 </motion.div>
             </div>
-            <motion.div className="slidingTextContainer" 
+            <motion.div className="sliderIconsContainer" 
                         variants={sliderVariants} 
                         initial="initial" 
                         animate="animate">
-                Write Content Creator Influencer
+                <div className="iconsWrapper">
+                    {[...techIcons, ...techIcons].map((icon, index) => (
+                        <img key={index} src={icon} alt={`Icon ${index}`} />   
+                    ))}
+                </div>
             </motion.div>
             <div className="imageContainer">
                 <ImageSlider/>

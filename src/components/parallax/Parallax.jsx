@@ -12,7 +12,6 @@ const Parallax = ({ type }) => {
     });
 
     const yText = useTransform(scrollYProgress, [0,1], ["0%", "500%"]);
-
     const yBg = useTransform(scrollYProgress, [0,1], ["0%", "100%"]);
 
     return (
@@ -24,7 +23,7 @@ const Parallax = ({ type }) => {
                 : "linear-gradient(180deg, #111132, #505064)", 
             }}>
             <motion.h1 style={{ y: yText }}>
-                {type === "services" ? "What We Do?" : "What We Did?"}
+                {type === "services" ? "What Do You Think?" : "What We Did?"}
             </motion.h1>
             <motion.div className="mountains"></motion.div>
             <motion.div className="planets"

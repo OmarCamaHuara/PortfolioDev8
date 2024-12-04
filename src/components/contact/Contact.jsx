@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import emailjs from '@emailjs/browser';
 
+
 const variants = {
     initial: {
         y: 500,
@@ -20,11 +21,9 @@ const variants = {
 
 const Contact = () => {
     const ref = useRef();
-    const formRef = useRef();
-    const [error, setError] = useState(false);
-    const [success, setSuccess] = useState(false);
-
-    const isInView = useInView(ref, {margin:"-100px"});
+    const formRef = useRef()
+    const [error, setError] = useState(false)
+    const [success, setSuccess] = useState(false)
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -35,13 +34,15 @@ const Contact = () => {
           })
           .then(
             () => {
-              setSuccess(true);
+              setSuccess(true)
             },
             (error) => {
-              setError(true);
+              setError(true)
             },
           );
       };
+
+    const isInView = useInView(ref, {margin:"-100px"});
 
     return (
         <motion.div 
@@ -52,17 +53,17 @@ const Contact = () => {
             whileInView="animate"
         >
             <motion.div className="textContainer" variants={variants}>
-                <motion.h1 variants={variants}>Let's work together</motion.h1>
+                <motion.h1 variants={variants}>Vamos trabalhar juntos</motion.h1>
                 <motion.div className="item" variants={variants}>
                     <h2>Mail</h2>
-                    <span>domar.dev8@gmail.com</span>
+                    <span>omar.js2023@gmail.com</span>
                 </motion.div>
-                <motion.div className="item" variants={variants}>
+                {/* <motion.div className="item" variants={variants}>
                     <h2>Address</h2>
                     <span>In your coracao</span>
-                </motion.div>
+                </motion.div> */}
                 <motion.div className="item" variants={variants}>
-                    <h2>Phone</h2>
+                    <h2>Nro Celular</h2>
                     <span>+55 (11) 98080-8286</span>
                 </motion.div>
             </motion.div>
@@ -104,11 +105,11 @@ const Contact = () => {
                     whileInView={{ opacity: 1 }}
                     transition={{ delay: 4, duration: 1 }}
                 >
-                    <input type="text" required placeholder="Name" name="name"/>
+                    <input type="text" required placeholder="Name" name="name" />
                     <input type="email" required placeholder="Email" name="email"/>
                     <textarea rows={8} placeholder="Message" name="message"/>
                     <button>Submit</button>
-                    {error && "Error Sending Message"}
+                    {error && "Error sending Message"}
                     {success && "Success"}
                 </motion.form>
             </div>

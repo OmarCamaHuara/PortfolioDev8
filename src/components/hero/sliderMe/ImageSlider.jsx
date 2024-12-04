@@ -38,8 +38,9 @@ const ImageSlider = () => {
                     animate="center"
                     exit="exit"
                     transition={{
-                        x: { type: "tween", stiffness: 5, damping: 1 },
+                        x: { type: "just", stiffness: 5, damping: 1 },
                         opacity: { duration: 0.005 },
+                        duration: 0.01
                     }}
                     custom={currentImage}            
                 />

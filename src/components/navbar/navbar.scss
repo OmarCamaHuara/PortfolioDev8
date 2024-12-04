@@ -5,7 +5,8 @@
 
     .wrapper{
         max-width: 1366px;
-        margin: auto;
+        margin-left: 20vh;
+        margin-right: 20vh;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -16,8 +17,9 @@
             padding: 20px;
         }
 
-        span{
+        span {
             font-weight: bold;
+            font-size: 180px;
 
             @include mobile{
                 display: none;
