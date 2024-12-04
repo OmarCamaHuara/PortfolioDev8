@@ -1,4 +1,4 @@
-import "./ImageSlider.scss"
+import "./imageSlider.scss"
 import React, { useState, useEffect} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
