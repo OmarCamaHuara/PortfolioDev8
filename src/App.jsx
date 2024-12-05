@@ -4,6 +4,7 @@ import Hero from "./components/hero/Hero"
 import Parallax from "./components/parallax/Parallax";
 import Services from "./components/services/Services";
 import Portfolio from "./components/portfolio/Porfolio";
+import ChatBot from "./components/chatbot/ChatBot";
 import Contact from "./components/contact/Contact";
 import Cursor from "./components/cursor/Cursor";
 
@@ -28,6 +29,10 @@ const App = () => {
     </section>
 
     <Portfolio />
+
+    <section>
+      <ChatBot />
+    </section>
 
     <section id="contact">
       <Contact />

@@ -3,10 +3,10 @@ import React, { useState, useEffect} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
-    './opa.png',
-    './pensa.png',
-    './reseva.png',
-    './voce.png'
+    './me/opa.png',
+    './me/pensa.png',
+    './me/reseva.png',
+    './me/voce.png'
 ]
 
 const ImageSlider = () => {

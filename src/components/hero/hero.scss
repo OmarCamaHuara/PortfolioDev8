@@ -12,6 +12,10 @@
         margin: auto;
         margin-left: 10vh;
 
+        @include mobile {
+            margin: 0;
+        }
+
         .textContainer {
             width: 50%;
             height: 80%;
@@ -21,9 +25,9 @@
             gap: 20px;
             
             @include mobile {
-                height: 40%;
+                height: 60%;
                 width: 100%;
-                gap: 20px;
+                gap: 6px;
                 align-items: center;
                 text-align: center;
             }
@@ -33,13 +37,22 @@
             font-size: 30px;
             color: #0877B9;
             letter-spacing: 10px;
+
+            @include mobile {
+                font-size: 24px;
+                .first-name,
+                .last-name {
+                    display: block;
+                }
+            }
         }
 
         h1 {
             font-size: 60px;
 
             @include mobile{
-                font-size: 36px;
+                font-size: 30px;
+                text-align: center;
             }
         }
 
@@ -65,7 +78,8 @@
                 cursor: pointer;
 
                 @include mobile{
-                    margin: 5px;
+                    padding: 14px;
+                    margin: 4px;
                 }
             }
 
@@ -93,6 +107,10 @@
             bottom: 0;
         }
 
+        img {
+           filter: drop-shadow(0 0 20px yellow); 
+        }
+
     }
     .sliderIconsContainer {
         position: absolute;
@@ -108,6 +126,11 @@
             img {
                 width: 100px;
                 height: 100px;
+
+                @include mobile {
+                    width: 50px;
+                    height: 50px;
+                }
             }
         }
     }

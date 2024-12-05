@@ -26,7 +26,7 @@ const Navbar = () => {
                     animate='hidden'
                     transition='transitionLogo'
                 >
-                    OmarDev
+                    RobotexDev
                 </motion.span>
                 <div className="social">
                     <a href="https://www.facebook.com/omar.js.8"><img src="/socialMedia/facebook-3-2.svg" alt="" /></a>
