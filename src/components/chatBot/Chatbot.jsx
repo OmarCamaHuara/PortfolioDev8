@@ -1,6 +1,6 @@
 import "./chatbot.scss";
 
-const ChatBot = () => {
+const Chatbot = () => {
     return <div className="chatbot">
         <h2 className="mini-title">
             <small>
@@ -46,4 +46,4 @@ const ChatBot = () => {
     </div>;
 };  
 
-export default ChatBot;
+export default Chatbot;
