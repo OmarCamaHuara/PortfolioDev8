@@ -1,4 +1,4 @@
-import "./chatbot.scss";
+import "./chatBot.scss";
 
 const Chatbot = () => {
     return <div className="chatbot">

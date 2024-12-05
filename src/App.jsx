@@ -5,7 +5,7 @@ import Parallax from "./components/parallax/Parallax";
 import Services from "./components/services/Services";
 import Portfolio from "./components/portfolio/Porfolio";
 import Contact from "./components/contact/Contact";
-import Chatbot from "./components/chatbot/Chatbot"
+import ChatBot from "./components/chatBot/ChatBot"
 import Cursor from "./components/cursor/Cursor";
 
 const App = () => {
@@ -31,7 +31,7 @@ const App = () => {
     <Portfolio />
 
     <section>
-      <Chatbot />
+      <ChatBot />
     </section>
 
     <section id="contact">
