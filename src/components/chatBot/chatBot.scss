@@ -45,6 +45,10 @@
         h2 {
             font-size: 72px;
 
+            span{
+                color: orange;
+            }
+
             @include mobile {
                 font-size: 40px;
             }

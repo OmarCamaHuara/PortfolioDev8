@@ -13,7 +13,7 @@
     width: 100%;
     padding: 0 10px 0 10px;
     flex-direction: column;
-    gap: 50px;
+    gap: 20px;
    }
 
    .textContainer {
@@ -27,16 +27,21 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        gap: 20px;           
+        gap: 16px;  
+        width: 80%;         
       }
           
       h1 {
         font-size: 100px;
         line-height: 70px;
 
+        span {
+            color: orange;
+        }
+
         @include mobile{
             font-size: 60px;
-            line-height: 60px;
+            line-height: 50px;
         }
       }
 
@@ -57,13 +62,13 @@
         }
 
         .phoneSvg {
-            stroke: orange;
+            stroke: #2182EB;
             position: absolute;
             margin: auto;
             z-index: -1;
 
             @include mobile{
-                width: 100%;
+                width: 80%;
             }
         }
 
