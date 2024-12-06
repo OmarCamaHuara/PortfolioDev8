@@ -7,7 +7,6 @@
     position: relative;
 
     @include mobile {
-        border: solid 2px rgb(24, 218, 82);
         position: relative;
         min-height: 80vh;
     }

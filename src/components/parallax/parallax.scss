@@ -10,7 +10,6 @@
     overflow: hidden;
 
     @include mobile{
-        border: solid 2px rgb(24, 218, 82);
         min-height: 100vh;
     }
 
