@@ -76,7 +76,7 @@ const Hero = () => {
                     <motion.div variants={textVariants} className="buttons">
                         <motion.button variants={textVariants}><a href="#Services">Experiência de trabalho recente</a></motion.button>
                         <motion.button variants={textVariants}>
-                            <a href="https://drive.google.com/file/d/10rAcIJM_kj40kf8HZBRsTNEk506kKtMX/view?usp=sharing" target="_blank" rel="noopener noreferrer">Downland CV</a>
+                            <a href="https://drive.google.com/file/d/1Lin57jAzdqDK_PVDrr6jZeK1ltSouJ_G/view?usp=sharing" target="_blank" rel="noopener noreferrer">Downland CV</a>
                             </motion.button>
                     </motion.div>
                     <motion.img variants={textVariants} animate="scrollButton" src="./scroll.png" alt="" />
