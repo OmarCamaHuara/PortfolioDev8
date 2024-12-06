@@ -80,7 +80,7 @@ const Portfolio = () => {
     return (
         <div className="portfolio">
             <div className="progress">
-                <h1>Personal Projects</h1>
+                <h1>Projetos Pessoais</h1>
                 <motion.div className="progressBar" style={{ scaleX }}></motion.div>
             </div>
             {item.map((item) => (

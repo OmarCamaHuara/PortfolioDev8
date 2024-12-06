@@ -6,6 +6,12 @@
     background: linear-gradient(180deg, #0c0c1d, #111132);
     position: relative;
 
+    @include mobile {
+        border: solid 2px rgb(24, 218, 82);
+        position: relative;
+        min-height: 80vh;
+    }
+
     .wrapper {
         max-width: 1366px;
         height: 100%;

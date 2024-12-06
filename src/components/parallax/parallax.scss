@@ -9,7 +9,12 @@
     justify-content: center;
     overflow: hidden;
 
-    h1{
+    @include mobile{
+        border: solid 2px rgb(24, 218, 82);
+        min-height: 100vh;
+    }
+
+    h1 {
         font-size: 10vh;
 
         @include mobile{

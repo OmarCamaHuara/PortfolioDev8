@@ -1,6 +1,7 @@
 html{
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    overflow: auto;
 }
 
 *{
@@ -22,7 +23,7 @@ a{
 
 section{
     height: 100vh;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
 }
 
 .course{

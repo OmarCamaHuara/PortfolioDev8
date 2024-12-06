@@ -13,7 +13,6 @@
         height: 100%;
 
         @include mobile{
-            border: solid 2px green;
             justify-content: flex-start;
             padding: 10px;
         }

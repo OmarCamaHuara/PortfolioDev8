@@ -13,7 +13,7 @@ const ChatBot = () => {
                 <h2>IA ChatBot</h2>
                 <p>Eu montei um chatbot aqui que conhece todas as minhas habilidades, experiência de trabalho e tem uma cópia do meu CV/Currículo. Você pode usá-lo para fazer perguntas sobre mim para ter uma ideia melhor de quem eu sou e o que eu fiz</p>
                 <p>Você também pode baixar meu currículo aqui se quiser dar uma olhada. Atualmente, estou procurando novas oportunidades, então se você tem um projeto que acha que eu seria uma boa opção, entre em contato!</p>
-                <a href="#" className="button">Download CV</a>
+                <a href="https://drive.google.com/file/d/10rAcIJM_kj40kf8HZBRsTNEk506kKtMX/view?usp=sharing" className="button">Download CV</a>
             </div>
             <div className="chat-box">
                  <div className="scroll-area">
