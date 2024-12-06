@@ -9,6 +9,7 @@
     @include mobile {
         position: relative;
         min-height: 80vh;
+        height: calc(100vh - 100px);
     }
 
     .wrapper {
@@ -30,9 +31,9 @@
             gap: 20px;
             
             @include mobile {
-                height: 60%;
+                height: 50%;
                 width: 100%;
-                gap: 6px;
+                gap: 12px;
                 align-items: center;
                 text-align: center;
             }
@@ -63,6 +64,11 @@
 
         p {
             color: #BDBDBD;
+
+            @include mobile{
+                font-size: 14px;
+                text-align: center;
+            }
         }
 
         .buttons {
@@ -113,7 +119,7 @@
         }
 
         img {
-           filter: drop-shadow(0 0 20px yellow); 
+           filter: drop-shadow(0 0 20px #2182EB); 
         }
 
     }
