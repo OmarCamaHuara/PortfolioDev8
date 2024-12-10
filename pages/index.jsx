@@ -4,7 +4,7 @@ import Parallax from "../components/parallax/Parallax";
 import WorkExperiences from "../components/workExperiences/WorkExperiences";
 import Portfolio from "../components/portfolio/Porfolio";
 import Contact from "../components/contact/Contact";
-import ChatBot from "../components/chatBot/Chatbot"
+import ChatBot from "../components/chatBot/ChatBot"
 import Cursor from "../components/cursor/Cursor";
 
 const Home = () => {
