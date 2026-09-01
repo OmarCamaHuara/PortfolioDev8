@@ -1,0 +1,16 @@
+.emptyState {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  max-width: var(--width-prose);
+}
+
+.title {
+  color: var(--fg);
+  margin-bottom: 0.75rem;
+}
+
+.body {
+  color: var(--fg-muted);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+}
