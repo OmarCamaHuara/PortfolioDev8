@@ -1,14 +1,41 @@
 import type { Metadata } from 'next';
+import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.scss';
 
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-instrument-serif',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono',
+});
+
 export const metadata: Metadata = {
-  title: 'Omar Cama | Backend Developer & AI Enthusiast',
-  description: 'Desenvolvedor Backend com experiência em Java, Spring Boot, APIs, microservices e integração de IA. São Paulo, Brasil.',
-  keywords: ['Backend Developer', 'Java', 'Spring Boot', 'API', 'Microservices', 'AI', 'Developer', 'São Paulo'],
+  title: {
+    default: 'Omar Cama',
+    template: '%s — Omar Cama',
+  },
+  description:
+    'AI-fluent backend engineer. Writing about production systems, LLM integration, and the boring engineering that keeps AI honest.',
   authors: [{ name: 'Omar Cama Huarahuara' }],
   openGraph: {
-    title: 'Omar Cama | Backend Developer & AI Enthusiast',
-    description: 'Desenvolvedor Backend com experiência em Java, Spring Boot, APIs e integração de IA.',
+    title: 'Omar Cama',
+    description:
+      'AI-fluent backend engineer. Writing about production systems, LLM integration, and the boring engineering that keeps AI honest.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -20,16 +47,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>{children}</body>
+    <html
+      lang="pt-BR"
+      className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+    >
+      <body>
+        <a href="#main" className="skip-to-content">
+          Ir para o conteúdo
+        </a>
+        {children}
+      </body>
     </html>
   );
 }
