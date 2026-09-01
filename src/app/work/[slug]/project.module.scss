@@ -1,0 +1,30 @@
+.main {
+  max-width: var(--width-page);
+  margin: 0 auto;
+  padding: 3rem var(--gutter);
+
+  @media (max-width: 768px) {
+    padding: 2rem var(--gutter-mobile);
+  }
+}
+
+.article {
+  max-width: var(--width-prose);
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+}
+
+.dek {
+  font-size: 1.25rem;
+  line-height: 1.55;
+  color: var(--fg-muted);
+  margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+}
