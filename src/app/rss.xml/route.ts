@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { getAllPosts } from '@/lib/content';
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://omar-cama.dev';
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohmar-tai.dev';
 
 function escape(s: string): string {
   return s

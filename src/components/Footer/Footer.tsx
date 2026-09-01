@@ -17,7 +17,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://github.com/omar-cama"
+                href="https://github.com/OmarCamaHuara"
                 target="_blank"
                 rel="noopener noreferrer"
               >

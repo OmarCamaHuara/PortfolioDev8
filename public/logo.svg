@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="132" height="28" viewBox="0 0 132 28" role="img" aria-label="ohmar_tai">
+  <style>
+    text { font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight: 500; font-size: 20px; letter-spacing: -0.02em; }
+  </style>
+  <text x="0" y="21" fill="#efe9dc">ohmar</text>
+  <text x="63" y="21" fill="#e2b714">_</text>
+  <text x="76" y="21" fill="#efe9dc">tai</text>
+</svg>

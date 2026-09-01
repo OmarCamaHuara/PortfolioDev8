@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
+import { Instrument_Serif, Inter, JetBrains_Mono, Roboto_Mono } from 'next/font/google';
 import './globals.scss';
 
 const instrumentSerif = Instrument_Serif({
@@ -24,18 +24,25 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
 });
 
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+});
+
 export const metadata: Metadata = {
   title: {
-    default: 'Omar Cama',
-    template: '%s — Omar Cama',
+    default: 'ohmar_tai',
+    template: '%s — ohmar_tai',
   },
   description:
-    'AI-fluent backend engineer. Writing about production systems, LLM integration, and the boring engineering that keeps AI honest.',
+    'Omar Cama — AI-fluent backend engineer. Writing about production systems, LLM integration, and the boring engineering that keeps AI honest.',
   authors: [{ name: 'Omar Cama Huarahuara' }],
   openGraph: {
-    title: 'Omar Cama',
+    title: 'ohmar_tai',
     description:
-      'AI-fluent backend engineer. Writing about production systems, LLM integration, and the boring engineering that keeps AI honest.',
+      'Omar Cama — AI-fluent backend engineer. Writing about production systems, LLM integration, and the boring engineering that keeps AI honest.',
     type: 'website',
     locale: 'pt_BR',
   },
@@ -49,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${instrumentSerif.variable} ${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${instrumentSerif.variable} ${inter.variable} ${robotoMono.variable} ${jetbrainsMono.variable}`}
     >
       <body>
         <a href="#main" className="skip-to-content">

@@ -5,7 +5,8 @@ import PageHeader from '@/components/PageHeader/PageHeader';
 import PostList from '@/components/PostList/PostList';
 import EmptyState from '@/components/EmptyState/EmptyState';
 import SubscribeInline from '@/components/SubscribeInline/SubscribeInline';
-import { getAllPosts } from '@/lib/content';
+import ConfigToolbar from '@/components/ConfigToolbar/ConfigToolbar';
+import { getAllPosts, PostType } from '@/lib/content';
 import styles from './writing.module.scss';
 
 export const metadata: Metadata = {
@@ -14,8 +15,26 @@ export const metadata: Metadata = {
     'Posts, Notes e Deep Dives sobre backend, integração de IA e engenharia de produção honesta.',
 };
 
-export default async function WritingIndex() {
-  const posts = await getAllPosts('writing');
+const FILTER_ITEMS = [
+  { key: 'all', label: 'all' },
+  { key: 'post', label: 'posts' },
+  { key: 'note', label: 'notes' },
+  { key: 'deep-dive', label: 'deep dives' },
+];
+
+const VALID_TYPES: PostType[] = ['post', 'note', 'deep-dive'];
+
+export default async function WritingIndex({
+  searchParams,
+}: {
+  searchParams: Promise<{ type?: string }>;
+}) {
+  const { type } = await searchParams;
+  const all = await getAllPosts('writing');
+  const filtered =
+    type && VALID_TYPES.includes(type as PostType)
+      ? all.filter((p) => p.type === type)
+      : all;
 
   return (
     <>
@@ -26,11 +45,19 @@ export default async function WritingIndex() {
           lede="Posts, Notes e Deep Dives. O que escrevi tentando fazer backend e IA conviverem sem gambiarra."
         />
 
+        <div className={styles.toolbarWrap}>
+          <ConfigToolbar
+            paramName="type"
+            items={FILTER_ITEMS}
+            ariaLabel="Filtrar por tipo"
+          />
+        </div>
+
         <section className={styles.content}>
-          {posts.length === 0 ? (
+          {filtered.length === 0 ? (
             <EmptyState kind="writing" />
           ) : (
-            <PostList items={posts} basePath="/writing" />
+            <PostList items={filtered} basePath="/writing" />
           )}
         </section>
 

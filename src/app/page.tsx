@@ -4,7 +4,10 @@ import Hero from '@/components/Hero/Hero';
 import EmptyState from '@/components/EmptyState/EmptyState';
 import SubscribeInline from '@/components/SubscribeInline/SubscribeInline';
 import SectionHeading from '@/components/SectionHeading/SectionHeading';
+import GhContributions from '@/components/GhContributions/GhContributions';
 import styles from './page.module.scss';
+
+const GH_USER = process.env.NEXT_PUBLIC_GITHUB_USER ?? 'OmarCamaHuara';
 
 export default function Home() {
   return (
@@ -34,6 +37,13 @@ export default function Home() {
               hrefLabel="Tudo"
             />
             <EmptyState kind="work" />
+          </div>
+        </section>
+
+        <section className={styles.section}>
+          <div className={styles.inner}>
+            <SectionHeading eyebrow="Ativo" title="GitHub" />
+            <GhContributions user={GH_USER} />
           </div>
         </section>
 

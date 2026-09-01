@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://omar-cama.dev';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohmar-tai.dev';
 
 const body = `# Omar Cama — AI-fluent backend engineer
 
@@ -21,7 +21,7 @@ the raw MDX source with \`Content-Type: text/markdown\`.
 
 ## Contact
 Email: omar.js2023@gmail.com
-GitHub: https://github.com/omar-cama
+GitHub: https://github.com/OmarCamaHuara
 LinkedIn: https://www.linkedin.com/in/omar-js/
 `;
 

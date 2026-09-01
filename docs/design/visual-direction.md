@@ -46,9 +46,9 @@ Uma combinação de:
 | `--fg-subtle` | `#6a6459` | Placeholder, disabled, dividers. |
 | `--border` | `rgba(239, 233, 220, 0.08)` | Hairline em cards, code blocks, dividers. |
 | `--border-strong` | `rgba(239, 233, 220, 0.18)` | Focus visible, borda ativa. |
-| `--accent` | `#e6a24a` | Único acento. Links, hover, foco, CTAs primários. Âmbar quente. |
-| `--accent-muted` | `#c4863a` | Hover state do accent. |
-| `--accent-wash` | `rgba(230, 162, 74, 0.12)` | Seleção de texto, backgrounds de highlight. |
+| `--accent` | `#e2b714` | Único acento. Links, hover, foco, CTAs primários. Amarelo monkeytype (ADR 0003). |
+| `--accent-muted` | `#b8930f` | Hover state do accent. |
+| `--accent-wash` | `rgba(226, 183, 20, 0.12)` | Seleção de texto, backgrounds de highlight. |
 | `--success` | `#8bb26f` | Verde silenciado. Confirmações, "shipped". |
 | `--error` | `#c86e5a` | Terracota. Erros de form, alertas. Nunca vermelho puro. |
 | `--code-bg` | `#161410` | Code blocks. |
@@ -83,7 +83,10 @@ Não implementar na v1 do redesign. Quando implementar:
 |---|---|---|---|---|
 | Heading | **Instrument Serif** | 400, 400 italic | Google Fonts | `'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif` |
 | Body | **Inter** | 400, 500, 600 | Google Fonts | `system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif` |
-| Mono | **JetBrains Mono** | 400, 500 | Google Fonts | `'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace` |
+| UI técnica / mono | **Roboto Mono** | 400, 500 | Google Fonts | `'SF Mono', Menlo, Consolas, monospace` |
+| Code block | **JetBrains Mono** | 400, 500 | Google Fonts | `'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace` |
+
+**UI técnica** = nav labels, toolbars (`[all][posts][notes]`), meta chips, timestamps em contexto técnico, wordmark `ohmar_tai`. Adicionado na ADR 0003 (elementos monkeytype). Roboto Mono e JetBrains Mono coexistem: Roboto na UI (mais neutra), JetBrains em code (ligatures, zero-slashed).
 
 ### Por que estas escolhas
 

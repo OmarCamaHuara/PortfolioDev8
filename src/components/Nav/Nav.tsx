@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Logo from '@/components/Logo/Logo';
 import styles from './Nav.module.scss';
 
 const links = [
@@ -24,8 +25,8 @@ export default function Nav() {
   return (
     <header className={styles.nav}>
       <div className={styles.inner}>
-        <Link href="/" className={`${styles.wordmark} no-underline`}>
-          Omar Cama
+        <Link href="/" className={`${styles.wordmark} no-underline`} aria-label="ohmar_tai — home">
+          <Logo size="md" />
         </Link>
 
         <nav className={styles.desktopLinks} aria-label="Principal">
