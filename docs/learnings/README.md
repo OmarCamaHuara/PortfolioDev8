@@ -1,8 +1,8 @@
 # Learnings
 
-Ao **fechar cada milestone**, criar aqui um arquivo `M?.md` com as lições da etapa — matéria-prima para melhorar o processo (e ótimo conteúdo para o Omar falar em entrevistas sobre desenvolvimento assistido por IA).
+Ao **fechar cada milestone**, criar aqui um arquivo `M?.md` com as lições da etapa. Sessões que rescopam o projeto de forma significativa (fora de milestone) também entram aqui, com nome no formato `YYYY-MM-DD-<slug>.md`.
 
-## Template
+## Template para learnings de milestone
 
 ```markdown
 # Learnings — M? (<nome do milestone>)
@@ -27,13 +27,11 @@ Ao **fechar cada milestone**, criar aqui um arquivo `M?.md` com as lições da e
 
 ## Índice
 
-| Milestone | Arquivo | Status |
+| Data / Milestone | Arquivo | Status |
 |---|---|---|
+| 2026-09-17 (rescope PR #5) | [`2026-09-17-rescope-pr5.md`](2026-09-17-rescope-pr5.md) | ✅ concluído |
 | M0 | `M0.md` | pendente |
 | M1 | `M1.md` | pendente |
 | M2 | `M2.md` | pendente |
-| M3 | `M3.md` | pendente |
-| M4 | `M4.md` | pendente |
-| M5 | `M5.md` | pendente |
 | M6 | `M6.md` | pendente |
 | M7 | `M7.md` (inclui retrospectiva geral) | pendente |
