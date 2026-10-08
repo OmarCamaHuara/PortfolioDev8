@@ -1,60 +1,104 @@
-# Worktree: docs (P0)
+# Worktree: ui-stack (frontend completo)
 
-**Branch:** `feature/p0-docs`
-**Scope:** Todas as 7 tasks P0 — promover drafts a canônicos, escrever ADRs 0006/0007, atualizar memórias.
-**Depende de:** nada. Pode começar imediatamente.
-**Bloqueia:** `feature/ui-stack` e `feature/content` (porque dependem de CONTEXT.md e ADRs novos no main).
+**Branch:** `feature/ui-stack`
+**Scope:** 22 tasks — fundação de design + Home refresh + hire-me layer + sidebar Brittany + componentes + labs frontend.
+**Depende de:** `feature/p0-docs` mergeado em `redesign/v2` (precisa de CONTEXT.md atualizado + ADRs 0004-0007 canônicos).
+**Isolamento:** mexe forte em `src/` — essa é a worktree "pesada" do frontend. Content e rag-api rodam em paralelo sem conflito.
 
-## Tasks (ordem recomendada)
+## Tasks (4 fases sequenciais)
 
-| # | Task card | Depende de | Pode paralelizar com |
-|---|---|---|---|
-| 1 | `docs/plan/tasks/P0-DOC-01-formalize-adr-0004.md` | — | DOC-02, DOC-04, DOC-05, DOC-06 |
-| 2 | `docs/plan/tasks/P0-DOC-02-formalize-adr-0005.md` | — | DOC-01, DOC-04, DOC-05, DOC-06 |
-| 3 | `docs/plan/tasks/P0-DOC-04-formalize-perfil-public.md` | — | DOC-01, DOC-02, DOC-05, DOC-06 |
-| 4 | `docs/plan/tasks/P0-DOC-05-write-adr-0006-visual.md` | — | DOC-01, DOC-02, DOC-04, DOC-06 |
-| 5 | `docs/plan/tasks/P0-DOC-06-write-adr-0007-backend-scope.md` | — | DOC-01, DOC-02, DOC-04, DOC-05 |
-| 6 | `docs/plan/tasks/P0-DOC-03-update-context-md.md` | DOC-01, DOC-02 | DOC-07 |
-| 7 | `docs/plan/tasks/P0-DOC-07-update-memory-visual-direction.md` | DOC-05 | DOC-03 |
+### Fase 1 — Fundação (bloqueia todas as fases seguintes)
 
-**Total estimado:** ~4.5h
+| # | Task card | Depende de |
+|---|---|---|
+| 1 | `docs/plan/tasks/P1-DESIGN-02-font-loading.md` | — |
+| 2 | `docs/plan/tasks/P1-DESIGN-01-scss-tokens.md` | P0-DOC-05 mergeado |
+
+### Fase 2 — Home refresh + Hire-me (paralelas entre si após Fase 1)
+
+| # | Task card | Depende de |
+|---|---|---|
+| 3 | `docs/plan/tasks/P1-UI-01-rewrite-hero-en.md` | Fase 1 |
+| 4 | `docs/plan/tasks/P1-UI-02-update-home-now-en.md` | Fase 1 |
+| 5 | `docs/plan/tasks/P1-UI-03-rewrite-llms-txt-en.md` | — |
+| 6 | `docs/plan/tasks/P1-UI-04-metadata-root-en.md` | — |
+| 7 | `docs/plan/tasks/P1-UI-05-nav-labels-en.md` | — |
+| 8 | `docs/plan/tasks/P1-HIRE-01-hire-me-page-en.md` | Fase 1 |
+| 9 | `docs/plan/tasks/P1-HIRE-02-trabalhe-comigo-pt.md` | HIRE-01 |
+| 10 | `docs/plan/tasks/P1-HIRE-03-nav-cta-open-to-work.md` | Fase 1, UI-05, HIRE-01 |
+| 11 | `docs/plan/tasks/P1-HIRE-04-schema-org-jsonld.md` | — |
+
+### Fase 3 — Sidebar Brittany + Componentes (paralelas entre si)
+
+| # | Task card | Depende de |
+|---|---|---|
+| 12 | `docs/plan/tasks/P2-UI-FEED-04-stack-chip.md` | Fase 1 |
+| 13 | `docs/plan/tasks/P2-UI-FEED-03-lab-card.md` | FEED-04 |
+| 14 | `docs/plan/tasks/P2-UI-FEED-02-work-grid-projectcard.md` | FEED-04 |
+| 15 | `docs/plan/tasks/P2-UI-FEED-01-writing-list-item.md` | Fase 1 |
+| 16 | `docs/plan/tasks/P2-UI-FEED-05-timeline-experience.md` | FEED-04 |
+| 17 | `docs/plan/tasks/P2-UI-SHELL-01-sidebar-component.md` | Fase 1 |
+| 18 | `docs/plan/tasks/P2-UI-SHELL-02-footer-refresh.md` | Fase 1 |
+| 19 | `docs/plan/tasks/P2-UI-SHELL-03-section-highlight-scroll.md` | SHELL-01 |
+
+### Fase 4 — Labs frontend
+
+| # | Task card | Depende de |
+|---|---|---|
+| 20 | `docs/plan/tasks/P2-RAG-UI-03-api-client.md` | — |
+| 21 | `docs/plan/tasks/P2-RAG-UI-02-source-card.md` | FEED-04 |
+| 22 | `docs/plan/tasks/P2-RAG-UI-04-loading-skeleton.md` | RAG-UI-02 |
+| 23 | `docs/plan/tasks/P2-RAG-UI-05-error-state.md` | — |
+| 24 | `docs/plan/tasks/P2-RAG-UI-06-empty-state.md` | — |
+| 25 | `docs/plan/tasks/P2-RAG-UI-01-semantic-search-page.md` | RAG-UI-02, 03, 04, 05, 06, FEED-03 |
+| 26 | `docs/plan/tasks/P2-RAG-UI-07-labs-index.md` | FEED-03 |
+
+### Fase 5 — Chat (depende da rag-api Fase 5 estar deployada)
+
+| # | Task card | Depende de |
+|---|---|---|
+| 27 | `docs/plan/tasks/P3-RAG-UI-01-chat-ui-streaming.md` | RAG-UI-01, SHELL-01, P3-RAG-API-13 em produção |
+| 28 | `docs/plan/tasks/P3-RAG-UI-02-source-citation-integration.md` | P3-RAG-UI-01 |
+| 29 | `docs/plan/tasks/P3-RAG-UI-03-toggle-retrieval-only.md` | P3-RAG-UI-01 |
+
+**Total estimado:** ~40h
 
 ## Setup
 
-Nenhum. Esta worktree só mexe em `docs/`, `CONTEXT.md` e memórias (fora do repo). Não precisa de `npm install`.
+```bash
+cd ~/Documents/DEV/PortfolioDev8-ui-stack
+npm install   # ~1-2min, baixa node_modules local
+npm run dev   # dev server em http://localhost:3000
+```
 
-## Interaction Protocol
+**IMPORTANTE:** cada worktree tem `node_modules/` próprio. ~500MB extras no disco.
 
-Antes de executar cada task, ler `docs/plan/README.md § Interaction protocol`. Open Questions **Tipo A** nos cards precisam de resposta do usuário antes de prosseguir.
+## Interaction Protocol — Open Questions reais
 
-Pros P0, ouso dizer que **nenhuma Open Question é Tipo A** — são promoções de drafts já aprovados. Mas confirmar com o usuário ao começar: *"Executando P0-DOC-01 a 07 sequencialmente, posso seguir sem perguntas intermediárias?"*
+Tipo A pra perguntar antes:
+- HIRE-01: email definitivo (`oscarcama888@gmail.com` ou outro?), slug exato do LinkedIn, incluir faixa salarial?
+- UI-SHELL-01: `/about` existe ou nav aponta pra `#now`?
+- UI-FEED-05: perfil pré-Premiersoft — quais roles listar?
+- RAG-UI-03: valor final de `NEXT_PUBLIC_RAG_API_URL`?
 
 ## Finalização
 
-Quando as 7 tasks estiverem com `status: done` nos frontmatters:
+PRs recomendadas por fase pra evitar PR gigante:
+- **PR 1**: Fase 1 + 2 (fundação + Home + hire-me) → ~15h → feedback rápido
+- **PR 2**: Fase 3 (Sidebar + componentes) → ~12h
+- **PR 3**: Fase 4 (Lab search frontend) → ~10h
+- **PR 4**: Fase 5 (Chat) → ~5h, só após rag-api v2 estar em produção
 
 ```bash
-# Verificação final
-grep -c "status: done" docs/plan/tasks/P0-DOC-*.md
-# expected: 7
-
-# Commitar (se o executor não commitou por task)
 git add -A
-git commit -m "docs: formaliza P0 — ADRs 0004-0007, CONTEXT.md, perfil público"
-
-# Abrir PR
-gh pr create --base redesign/v2 --head feature/p0-docs \
-  --title "P0: formalize decisions (ADRs 0004-0007 + CONTEXT.md + perfil)" \
-  --body "Promove drafts a canônicos. Desbloqueia feature/ui-stack e feature/content."
-
-# Após merge:
-git worktree remove ../PortfolioDev8-docs
-git branch -d feature/p0-docs
+git commit -m "feat(ui): fundação (tokens + fonts) + Home refresh + hire-me layer"
+gh pr create --base redesign/v2 --head feature/ui-stack --title "..."
 ```
 
-## Non-goals desta worktree
+Após cada merge, rebasear a branch pra pegar mudanças (especialmente da `feature/content` quando mergear).
 
-- Não tocar em `src/`.
-- Não tocar em `content/`.
-- Não tocar em `package.json`, `package-lock.json`.
-- Não executar nenhuma task P1+ (fica para outras worktrees).
+## Non-goals
+
+- Não tocar em `rag-api/`.
+- Não escrever conteúdo MDX (fica em `feature/content`).
+- Não tocar em `docs/plan/`.
