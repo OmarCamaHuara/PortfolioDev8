@@ -6,7 +6,7 @@ priority: P0
 estimate_hours: 0.5
 depends_on: []
 blocks: [P2-RAG-API-03]
-status: pending
+status: done
 ---
 
 # P0-DOC-04 — Formalize perfil_llm.public.md
