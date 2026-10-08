@@ -24,6 +24,9 @@ dist-ssr
 *.sln
 *.sw?
 
-# Agent skills (locally installed)
+# Agent skills + local Claude Code config (never commit)
 .agents
-.claude/skills
+.claude/
+
+# Perfil interno com PII — mantido local, derivado curado é docs/perfil_llm.public.md
+docs/perfil_llm_omar_cama_huarahuara.md

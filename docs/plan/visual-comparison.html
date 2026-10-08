@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Visual comparison — Yellow (monkeytype) vs Teal (Brittany)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;600&family=Roboto+Mono:wght@400&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  :root {
+    --bg: #0a192f;
+    --bg-elevated: #112240;
+    --text: #ccd6f6;
+    --text-muted: #8892b0;
+    --text-strong: #e6f1ff;
+    --border: #233554;
+    --border-strong: #304a7a;
+    --success: #3fb950;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px; line-height: 1.6;
+  }
+  body { padding: 32px; }
+  .page-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px; color: var(--text-strong); margin: 0 0 8px;
+  }
+  .page-sub { color: var(--text-muted); margin: 0 0 32px; font-size: 14px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+  .panel {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 32px;
+  }
+  .panel-A { --accent: #e2b714; --accent-dim: rgba(226,183,20,0.1); }
+  .panel-B { --accent: #64ffda; --accent-dim: rgba(100,255,218,0.1); }
+
+  .panel-label {
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    font-size: 11px; color: var(--text-muted);
+    margin-bottom: 24px; display: flex; justify-content: space-between;
+  }
+  .panel-label strong { color: var(--accent); font-weight: 400; }
+
+  .hero-headline {
+    font-family: 'Instrument Serif', serif;
+    font-size: 42px; line-height: 1.1;
+    color: var(--text-strong);
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+  }
+  .hero-dek {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px; color: var(--text-muted);
+    margin: 0 0 24px;
+    max-width: 480px;
+  }
+  .cta-row { display: flex; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
+  .cta-primary, .cta-secondary {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;
+    padding: 10px 18px; border-radius: 2px;
+    cursor: pointer; text-decoration: none; display: inline-flex;
+    align-items: center; gap: 8px;
+    transition: all 150ms ease;
+  }
+  .cta-primary {
+    background: var(--accent); color: var(--bg);
+    border: 1px solid var(--accent); font-weight: 400;
+  }
+  .cta-primary:hover { background: var(--accent-dim); color: var(--accent); }
+  .cta-secondary {
+    background: transparent; color: var(--text); border: 1px solid var(--border);
+  }
+  .cta-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  .sidebar-mock {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 4px; padding: 20px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 24px;
+  }
+  .wordmark {
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px; color: var(--text-strong); margin-bottom: 4px;
+  }
+  .wordmark .cursor {
+    color: var(--accent); animation: blink 1.2s step-start infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+  .wordmark-sub {
+    font-size: 12px; color: var(--text-muted); margin-bottom: 16px;
+  }
+  .nav-items {
+    list-style: none; padding: 0; margin: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .nav-items li {
+    display: flex; align-items: center; gap: 12px; padding: 6px 0;
+    color: var(--text-muted); cursor: pointer;
+    transition: color 150ms ease;
+  }
+  .nav-items li:hover { color: var(--text); }
+  .nav-items li.active { color: var(--text-strong); }
+  .nav-items li.active::before {
+    content: ''; display: block; width: 24px; height: 1px; background: var(--accent);
+  }
+  .nav-items li:not(.active)::before {
+    content: ''; display: block; width: 12px; height: 1px; background: var(--border);
+  }
+
+  .chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  .chip {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; letter-spacing: 0.05em;
+    padding: 4px 10px; border: 1px solid var(--border); border-radius: 2px;
+    color: var(--text-muted); cursor: default;
+    transition: all 150ms ease;
+  }
+  .chip:hover { border-color: var(--accent); color: var(--accent); }
+  .chip.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+  .lab-card {
+    border: 1px solid var(--border); border-radius: 4px;
+    padding: 20px; margin-bottom: 16px;
+    transition: all 150ms ease; cursor: pointer;
+  }
+  .lab-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .lab-card-head {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 12px;
+  }
+  .lab-card-head h3 {
+    font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600;
+    color: var(--text-strong); margin: 0;
+  }
+  .status-badge {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 2px 8px; border-radius: 2px;
+    background: rgba(63,185,80,0.15); color: var(--success);
+    border: 1px solid rgba(63,185,80,0.3);
+  }
+  .lab-card p {
+    font-size: 14px; color: var(--text-muted); margin: 0 0 12px;
+  }
+
+  .link-sample {
+    font-family: 'Roboto Mono', monospace; font-size: 13px;
+    color: var(--accent); text-decoration: none;
+    border-bottom: 1px dashed var(--accent); padding-bottom: 2px;
+  }
+  .link-sample:hover { border-bottom-style: solid; }
+
+  .open-to-work {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 6px 12px; border: 1px solid var(--success); border-radius: 2px;
+    color: var(--success); cursor: pointer; background: transparent;
+    transition: all 150ms ease;
+  }
+  .open-to-work:hover { background: var(--success); color: var(--bg); }
+  .open-to-work::before {
+    content: ''; display: block; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--success); animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { opacity: 0.3; } }
+
+  .footnote {
+    margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+  <h1 class="page-title">Visual comparison — accent decision</h1>
+  <p class="page-sub">
+    Same navy base (#0a192f) and typography (Instrument Serif + Inter + Roboto Mono). Only the accent color differs.
+    Choose the one that feels right for an AI engineer portfolio targeting remote US/EU.
+  </p>
+
+  <div class="grid">
+    <!-- Panel A: Yellow monkeytype -->
+    <section class="panel panel-A">
+      <div class="panel-label"><span>Panel A</span><strong>yellow #e2b714 — monkeytype</strong></div>
+
+      <h2 class="hero-headline">AI engineer with senior backend background.</h2>
+      <p class="hero-dek">
+        I ship LLM-integrated systems with the discipline of production backend.
+        Formalizing AWS. Open to remote US/EU.
+      </p>
+      <div class="cta-row">
+        <a class="cta-primary" href="#">Open to Work →</a>
+        <a class="cta-secondary" href="#">Read my writing</a>
+      </div>
+
+      <div class="sidebar-mock">
+        <div class="wordmark">ohmar<span class="cursor">_tai|</span></div>
+        <div class="wordmark-sub">AI engineer with senior backend background.</div>
+        <ul class="nav-items">
+          <li>About</li>
+          <li class="active">Writing</li>
+          <li>Work</li>
+          <li>Labs</li>
+          <li>Hire me</li>
+        </ul>
+      </div>
+
+      <div class="chip-row">
+        <span class="chip">All</span>
+        <span class="chip active">Posts</span>
+        <span class="chip">Notes</span>
+        <span class="chip">Deep Dives</span>
+      </div>
+
+      <div class="chip-row">
+        <span class="chip">Java 17</span>
+        <span class="chip">Spring Boot</span>
+        <span class="chip">pgvector</span>
+        <span class="chip">Gemini</span>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-card-head">
+          <h3>Lab 01 — Semantic Search</h3>
+          <span class="status-badge">Live</span>
+        </div>
+        <p>Try: "spring and oracle" — top-K RAG retrieval over this portfolio.</p>
+        <a class="link-sample" href="#">labs/semantic-search →</a>
+      </div>
+
+      <div style="margin-top:24px;">
+        <a class="open-to-work" href="#">Open to Work</a>
+      </div>
+    </section>
+
+    <!-- Panel B: Teal Brittany -->
+    <section class="panel panel-B">
+      <div class="panel-label"><span>Panel B</span><strong>teal #64ffda — brittany</strong></div>
+
+      <h2 class="hero-headline">AI engineer with senior backend background.</h2>
+      <p class="hero-dek">
+        I ship LLM-integrated systems with the discipline of production backend.
+        Formalizing AWS. Open to remote US/EU.
+      </p>
+      <div class="cta-row">
+        <a class="cta-primary" href="#">Open to Work →</a>
+        <a class="cta-secondary" href="#">Read my writing</a>
+      </div>
+
+      <div class="sidebar-mock">
+        <div class="wordmark">ohmar<span class="cursor">_tai|</span></div>
+        <div class="wordmark-sub">AI engineer with senior backend background.</div>
+        <ul class="nav-items">
+          <li>About</li>
+          <li class="active">Writing</li>
+          <li>Work</li>
+          <li>Labs</li>
+          <li>Hire me</li>
+        </ul>
+      </div>
+
+      <div class="chip-row">
+        <span class="chip">All</span>
+        <span class="chip active">Posts</span>
+        <span class="chip">Notes</span>
+        <span class="chip">Deep Dives</span>
+      </div>
+
+      <div class="chip-row">
+        <span class="chip">Java 17</span>
+        <span class="chip">Spring Boot</span>
+        <span class="chip">pgvector</span>
+        <span class="chip">Gemini</span>
+      </div>
+
+      <div class="lab-card">
+        <div class="lab-card-head">
+          <h3>Lab 01 — Semantic Search</h3>
+          <span class="status-badge">Live</span>
+        </div>
+        <p>Try: "spring and oracle" — top-K RAG retrieval over this portfolio.</p>
+        <a class="link-sample" href="#">labs/semantic-search →</a>
+      </div>
+
+      <div style="margin-top:24px;">
+        <a class="open-to-work" href="#">Open to Work</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="footnote">
+    How to view: open this file directly in a browser (file:// path works). Narrow the window to see mobile stacking.
+    Decision prompt: which panel reads as "AI engineer sênior remoto US/EU" more credibly to you? Yellow signals personality (creator-ish). Teal signals convention (corporate-safer).
+  </div>
+</body>
+</html>
