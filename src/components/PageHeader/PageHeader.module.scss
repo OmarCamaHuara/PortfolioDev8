@@ -1,0 +1,18 @@
+.header {
+  padding: 4rem 0 3rem;
+
+  @media (max-width: 768px) {
+    padding: 2.5rem 0 2rem;
+  }
+}
+
+.title {
+  margin-bottom: 1.25rem;
+}
+
+.lede {
+  max-width: var(--width-prose);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--fg-muted);
+}

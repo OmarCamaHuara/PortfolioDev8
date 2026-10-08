@@ -1,0 +1,42 @@
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  font-family: var(--font-mono-ui);
+  font-size: var(--fs-small);
+  padding: 0.5rem 0;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15em;
+  color: var(--fg-muted);
+  padding: 0.25rem 0.35rem;
+  border-radius: 2px;
+  transition: color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+}
+
+.item:hover {
+  color: var(--fg);
+}
+
+.item.active {
+  color: var(--accent);
+  background: var(--accent-wash);
+}
+
+.bracket {
+  color: var(--fg-subtle);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.item:hover .bracket,
+.item.active .bracket {
+  color: var(--accent);
+}
+
+.label {
+  padding: 0 0.15em;
+}

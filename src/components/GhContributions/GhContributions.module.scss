@@ -1,0 +1,25 @@
+.wrap {
+  max-width: var(--width-page);
+}
+
+.scroller {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.grid {
+  display: block;
+  min-width: 100%;
+}
+
+.footer {
+  margin-top: 1rem;
+  font-family: var(--font-mono-ui);
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+}
+
+.count {
+  color: var(--accent);
+  font-weight: 500;
+}

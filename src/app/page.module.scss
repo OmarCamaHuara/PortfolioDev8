@@ -1,0 +1,32 @@
+.section {
+  padding: 3rem 0;
+
+  @media (max-width: 768px) {
+    padding: 2rem 0;
+  }
+}
+
+.inner {
+  max-width: var(--width-page);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+
+  @media (max-width: 768px) {
+    padding: 0 var(--gutter-mobile);
+  }
+}
+
+.prose {
+  max-width: var(--width-prose);
+
+  p {
+    margin-bottom: 1.25rem;
+    color: var(--fg);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}

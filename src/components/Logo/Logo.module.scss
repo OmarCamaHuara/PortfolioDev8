@@ -1,0 +1,43 @@
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-mono-ui);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  line-height: 1;
+}
+
+.sm {
+  font-size: 1rem;
+}
+
+.md {
+  font-size: 1.25rem;
+}
+
+.name[aria-hidden] {
+  display: inline;
+}
+
+.underscore {
+  color: var(--accent);
+  padding: 0 0.02em;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.logo > .name,
+.logo > .underscore {
+  aria-hidden: true;
+}

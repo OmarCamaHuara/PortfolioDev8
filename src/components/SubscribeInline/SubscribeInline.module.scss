@@ -1,0 +1,25 @@
+.subscribe {
+  padding: 4rem 0 2rem;
+}
+
+.inner {
+  max-width: var(--width-page);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+
+  @media (max-width: 768px) {
+    padding: 0 var(--gutter-mobile);
+  }
+}
+
+.title {
+  max-width: 24ch;
+  margin-bottom: 1rem;
+}
+
+.body {
+  max-width: var(--width-prose);
+  color: var(--fg-muted);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}

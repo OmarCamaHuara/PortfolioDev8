@@ -1,0 +1,16 @@
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+  margin-bottom: 1.5rem;
+}
+
+.sep {
+  color: var(--fg-subtle);
+}
+
+.type {
+  font-weight: 500;
+}

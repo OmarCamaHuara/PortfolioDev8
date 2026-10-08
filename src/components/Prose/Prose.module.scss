@@ -1,0 +1,75 @@
+.prose {
+  max-width: var(--width-prose);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--fg);
+
+  h2 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    margin-bottom: 1.25rem;
+  }
+
+  a {
+    color: var(--accent);
+  }
+
+  strong {
+    color: var(--fg);
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ul,
+  ol {
+    margin: 0 0 1.5rem 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  blockquote {
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+    color: var(--fg);
+    margin: 1.5rem 0;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 3rem 0;
+  }
+
+  figure {
+    margin: 2rem 0;
+  }
+
+  figcaption {
+    margin-top: 0.5rem;
+    font-size: var(--fs-small);
+    color: var(--fg-muted);
+    font-style: italic;
+    text-align: left;
+  }
+
+  pre {
+    margin: 1.5rem 0;
+  }
+
+  code {
+    /* inline code — already styled globally */
+  }
+}
