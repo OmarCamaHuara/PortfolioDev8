@@ -2,6 +2,8 @@
 
 Em 2026-10-08, consequência direta do ADR 0004: com audiência prioritária em recrutador/eng manager US/EU, a Language Policy original do `CONTEXT.md` ("pt-BR default; en variant só pra Deep Dives e Posts de IA") inverte. Site passa a ser **English-first**: rotas canônicas, Hero, Nav, metadata, `/llms.txt`, `/hire-me` nascem em EN. Posts e Project Write-ups aceitam ambas as línguas via frontmatter `lang`, sem exigência de paridade — uma peça pode sair só em EN, só em pt-BR, ou em ambas em momentos diferentes.
 
+**Fronteira de escopo da política:** A diretiva EN-primary aplica-se estritamente às **superfícies públicas** acessíveis pelo leitor e agentes (rotas do site, navegação, metadados públicos e artigos públicos). A documentação interna, especificações de arquitetura (ADRs), tarefas do plano e arquivos de trabalho permanecem em pt-BR por padrão para agilidade no raciocínio e registro do autor (Omar).
+
 **Trade-off aceito:** perde-se parte da fricção zero com a audiência pt-BR do YouTube `QuER SER SEnior` (ADR 0001 contava com ela como primeiro público). Mitigação: rota `/trabalhe-comigo` (pt-BR variant de `/hire-me`), Posts específicos de carreira em pt-BR, e metadata do Post identifica lang pro feed. Risco secundário: SEO internacional exige `hreflang` correto e sitemap bilíngue — adicionar no sprint seguinte, não bloqueia esta ADR.
 
 **Fica rejeitado:** (a) EN only — mataria audiência pt-BR acumulada e fecha porta pra oportunidades em pt-BR (mercado freelance remoto brasileiro); (b) pt-BR primário com `/en` espelhado — SEO ruim e sinal confuso pro recrutador US que cai no `/` primeiro; (c) idioma automático por geolocalização — anti-pattern UX, prende o leitor em uma versão.
