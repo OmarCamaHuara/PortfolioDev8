@@ -73,4 +73,4 @@ Se a LLM executora não tem certeza, trata como Tipo A (pergunta). Melhor pergun
 - **P3 — Lab RAG v2 (geração) + content expansion (2-3 semanas):** adiciona endpoint `/api/chat` com Gemini + guard rails, chat UI com streaming, 2 Posts a mais.
 - **P4 — Operations & polish (contínuo):** domínio custom, hreflang, fechar PR #5, decisão sobre repos privados.
 
-Ver `backlog.md` pra lista completa de ~45 tasks.
+Ver `backlog.md` pra lista completa de 68 tasks.

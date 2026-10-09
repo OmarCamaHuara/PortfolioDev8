@@ -93,7 +93,7 @@ _Avoid_: learning AWS, studying AWS, AWS journey, caminho pra AWS
 ## Language Policy
 
 **EN primary**:
-Idioma primário do site a partir de 2026-10-08 (ADR 0005). Rotas canônicas, Hero, Nav, metadata, `/llms.txt`, `/hire-me` nascem em EN. Metadata e navegação ficam em EN.
+Idioma primário do site a partir de 2026-10-08 (ADR 0005). Rotas canônicas, Hero, Nav, metadata, `/llms.txt`, `/hire-me` nascem em EN. Metadata e navegação públicas ficam em EN. (Nota: documentação técnica interna e ADRs permanecem em pt-BR por padrão).
 
 **pt-BR variant**:
 Posts e Project Write-ups aceitam ambas as línguas via frontmatter `lang`. Sem exigência de paridade — uma peça pode sair só em EN, só em pt-BR, ou em ambas em momentos diferentes. Rota `/trabalhe-comigo` é a variant explícita de `/hire-me` (não é tradução palavra-a-palavra; é a mesma informação adaptada ao mercado pt-BR).
