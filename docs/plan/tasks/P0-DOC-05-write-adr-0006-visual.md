@@ -6,7 +6,7 @@ priority: P0
 estimate_hours: 1
 depends_on: []
 blocks: [P1-DESIGN-01, P0-DOC-07]
-status: pending
+status: done
 ---
 
 # P0-DOC-05 — Write ADR 0006 (visual direction)

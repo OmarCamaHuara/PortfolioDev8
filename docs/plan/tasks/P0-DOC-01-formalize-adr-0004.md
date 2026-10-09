@@ -6,7 +6,7 @@ priority: P0
 estimate_hours: 0.5
 depends_on: []
 blocks: [P0-DOC-03, P1-UI-01, P1-UI-02, P1-UI-04]
-status: pending
+status: done
 ---
 
 # P0-DOC-01 — Formalize ADR 0004

@@ -6,7 +6,7 @@ priority: P0
 estimate_hours: 1
 depends_on: [P0-DOC-01, P0-DOC-02]
 blocks: [P1-UI-01, P1-UI-02, P1-HIRE-01, P1-HIRE-02]
-status: pending
+status: done
 ---
 
 # P0-DOC-03 — Update CONTEXT.md
