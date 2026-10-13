@@ -10,13 +10,13 @@ import { getAllPosts, PostType } from '@/lib/content';
 import styles from './writing.module.scss';
 
 export const metadata: Metadata = {
-  title: 'Writing',
+  title: 'Artigos',
   description:
     'Posts, Notes e Deep Dives sobre backend, integração de IA e engenharia de produção honesta.',
 };
 
 const FILTER_ITEMS = [
-  { key: 'all', label: 'all' },
+  { key: 'all', label: 'todos' },
   { key: 'post', label: 'posts' },
   { key: 'note', label: 'notes' },
   { key: 'deep-dive', label: 'deep dives' },
@@ -41,7 +41,7 @@ export default async function WritingIndex({
       <Nav />
       <main id="main" className={styles.main}>
         <PageHeader
-          title="Writing"
+          title="Artigos"
           lede="Posts, Notes e Deep Dives. O que escrevi tentando fazer backend e IA conviverem sem gambiarra."
         />
 

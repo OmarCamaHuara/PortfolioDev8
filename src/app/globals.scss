@@ -4,49 +4,82 @@
  * ========================================================================= */
 
 :root {
-  /* Colors — dark (default) */
-  --bg: #0e0d0b;
-  --bg-elevated: #151310;
-  --fg: #efe9dc;
-  --fg-muted: #a8a196;
-  --fg-subtle: #6a6459;
+  /* Font families — set via next/font in layout.tsx */
+  --ff-serif: var(--font-serif), ui-serif, serif;
+  --ff-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --ff-mono: var(--font-mono), ui-monospace, monospace;
 
-  --border: rgba(239, 233, 220, 0.08);
-  --border-strong: rgba(239, 233, 220, 0.18);
-
+  /* Colors — dark navy Brittany + monkeytype yellow accent */
+  --bg: #0a192f;
+  --bg-elevated: #112240;
+  --bg-light: #1d2d50;
+  --text: #ccd6f6;
+  --text-muted: #8892b0;
+  --text-strong: #e6f1ff;
   --accent: #e2b714;
+  --accent-dim: rgba(226, 183, 20, 0.1);
   --accent-muted: #b8930f;
   --accent-wash: rgba(226, 183, 20, 0.12);
+  --border: #233554;
+  --border-strong: #304a7a;
+  --error: #f85149;
+  --success: #3fb950;
 
-  --success: #8bb26f;
-  --error: #c86e5a;
+  /* Legacy color & font aliases */
+  --fg: var(--text);
+  --fg-muted: var(--text-muted);
+  --fg-subtle: #8892b0;
+  --font-heading: var(--ff-serif);
+  --font-body: var(--ff-sans);
+  --font-mono: var(--ff-mono);
+  --font-mono-ui: var(--ff-mono);
+  --code-bg: var(--bg-elevated);
+  --code-fg: var(--text);
 
-  --code-bg: #161410;
-  --code-fg: #efe9dc;
+  /* Type scale — canonical tokens */
+  --fs-xs: 0.75rem;     /* 12px */
+  --fs-sm: 0.875rem;    /* 14px */
+  --fs-base: 1rem;      /* 16px */
+  --fs-md: 1.25rem;     /* 20px */
+  --fs-lg: 1.5rem;      /* 24px */
+  --fs-xl: 2rem;        /* 32px */
+  --fs-2xl: 2.625rem;   /* 42px */
+  --fs-3xl: 3.5rem;     /* 56px */
 
-  /* Typography — families set via next/font in layout.tsx */
-  --font-heading: var(--font-instrument-serif), 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
-  --font-body: var(--font-inter), system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-mono-ui: var(--font-roboto-mono), 'SF Mono', Menlo, Consolas, monospace;
-  --font-mono: var(--font-jetbrains-mono), 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  /* Type scale — legacy aliases */
+  --fs-h1: var(--fs-3xl);
+  --fs-h1-mobile: var(--fs-2xl);
+  --fs-h2: var(--fs-xl);
+  --fs-h3: var(--fs-lg);
+  --fs-body: var(--fs-base);
+  --fs-small: var(--fs-sm);
+  --fs-micro: var(--fs-xs);
+  --fs-code-inline: var(--fs-sm);
+  --fs-code-block: var(--fs-sm);
 
-  /* Type scale */
-  --fs-h1: 4rem;       /* 64px desktop */
-  --fs-h1-mobile: 2.5rem;
-  --fs-h2: 2.25rem;    /* 36px */
-  --fs-h3: 1.375rem;   /* 22px */
-  --fs-body: 1.0625rem; /* 17px */
-  --fs-small: 0.875rem; /* 14px */
-  --fs-micro: 0.75rem;  /* 12px */
-  --fs-code-inline: 0.9375rem;
-  --fs-code-block: 0.875rem;
+  /* Line heights */
+  --lh-tight: 1.1;
+  --lh-heading: 1.3;
+  --lh-body: 1.6;
 
-  /* Layout */
+  /* Spacing scale — canonical tokens */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-24: 96px;
+  --sp-32: 128px;
+
+  /* Layout & Spacing — legacy aliases */
+  --gutter: var(--sp-8);
+  --gutter-mobile: var(--sp-4);
+  --rhythm: var(--sp-6);
   --width-prose: 68ch;
   --width-page: 72rem;
-  --gutter: 2rem;
-  --gutter-mobile: 1rem;
-  --rhythm: 1.5rem;
 
   /* Motion */
   --dur-fast: 150ms;

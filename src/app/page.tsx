@@ -19,10 +19,10 @@ export default function Home() {
         <section className={styles.section}>
           <div className={styles.inner}>
             <SectionHeading
-              eyebrow="Latest"
-              title="Writing"
+              eyebrow="Recentes"
+              title="Artigos"
               href="/writing"
-              hrefLabel="Tudo"
+              hrefLabel="Ver todos"
             />
             <EmptyState kind="writing" />
           </div>
@@ -31,10 +31,10 @@ export default function Home() {
         <section className={styles.section}>
           <div className={styles.inner}>
             <SectionHeading
-              eyebrow="Selected"
-              title="Work"
+              eyebrow="Destaques"
+              title="Projetos"
               href="/work"
-              hrefLabel="Tudo"
+              hrefLabel="Ver todos"
             />
             <EmptyState kind="work" />
           </div>
@@ -42,25 +42,24 @@ export default function Home() {
 
         <section className={styles.section}>
           <div className={styles.inner}>
-            <SectionHeading eyebrow="Ativo" title="GitHub" />
+            <SectionHeading eyebrow="Atividade" title="GitHub" />
             <GhContributions user={GH_USER} />
           </div>
         </section>
 
         <section className={styles.section}>
           <div className={styles.inner}>
-            <SectionHeading eyebrow="Agora" title="Onde eu tô" />
+            <SectionHeading eyebrow="Agora" title="No que estou trabalhando" />
             <div className={styles.prose}>
               <p>
-                Backend na Philips, mexendo em sistemas médicos que rodam há
-                anos e não podem cair. Nas horas restantes: estudando como
-                integrar LLMs em código que já existia — não em greenfield de
-                demo. As duas coisas se conversam mais do que parece.
+                Engenheiro backend em produto da área médica (Philips-adjacent), mantendo
+                sistemas críticos em produção com Java 17 e Spring Boot. Paralelamente,
+                desenvolvendo Lab RAG — busca semântica sobre este portfólio em
+                Java + pgvector + Gemini. Formalizando certificação AWS Solutions Architect.
               </p>
               <p>
-                Também tô construindo este site em público, começando por
-                escrever sobre o que aprendi tentando fazer AI-coding parar de
-                quebrar coisa aleatória em codebases sérios.
+                Disponível para oportunidades remotas — veja em{' '}
+                <a href="/trabalhe-comigo">/trabalhe-comigo</a>.
               </p>
             </div>
           </div>
