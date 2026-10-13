@@ -1,28 +1,28 @@
 import { NextResponse } from 'next/server';
+import { SITE_URL } from '@/lib/site';
+import { BRANDING } from '@/lib/branding';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohmar-tai.dev';
+const body = `# ${BRANDING.fullName}
 
-const body = `# Omar Cama — AI-fluent backend engineer
+> ${BRANDING.tagline} Java 17, Spring Boot,
+> hexagonal architecture. LLM/RAG/MCP in production. Open to remote
+> US/EU AI engineer roles.
 
-Backend engineer writing about production systems and pragmatic AI
-integration. Bilingual (pt-BR default, EN for AI-focused content).
+## Writing
+- [Writing feed](${SITE_URL}/writing): posts, notes, deep dives
+- [RSS](${SITE_URL}/rss.xml)
 
-## Discovery
-- Home: ${SITE_URL}/
-- Writing feed: ${SITE_URL}/writing (Posts, Notes, Deep Dives)
-- Work feed: ${SITE_URL}/work (Project Write-ups)
-- Sitemap: ${SITE_URL}/sitemap.xml
-- RSS: ${SITE_URL}/rss.xml
+## Work
+- [Project write-ups](${SITE_URL}/work)
 
-## Formats
-Every Post and Project Write-up is served as HTML and as raw markdown.
-Append \`.md\` to any /writing/<slug> or /work/<slug> URL to fetch
-the raw MDX source with \`Content-Type: text/markdown\`.
+## Labs
+- [Lab 01 — Semantic search](${SITE_URL}/labs/semantic-search): RAG retrieval over this portfolio.
 
-## Contact
-Email: omar.js2023@gmail.com
-GitHub: https://github.com/OmarCamaHuara
-LinkedIn: https://www.linkedin.com/in/omar-js/
+## Profile
+- [Public profile markdown](${SITE_URL}/perfil_llm.public.md)
+
+## Contratação
+- [Trabalhe comigo](${SITE_URL}/trabalhe-comigo)
 `;
 
 export async function GET() {
@@ -33,3 +33,4 @@ export async function GET() {
     },
   });
 }
+
