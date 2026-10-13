@@ -4,21 +4,17 @@
 }
 
 .item {
+  position: relative;
+  padding: 1.5rem 0;
   border-top: 1px solid var(--border);
 
   &:last-child {
     border-bottom: 1px solid var(--border);
   }
-}
 
-.link {
-  display: block;
-  padding: 1.5rem 0;
-  color: var(--fg);
-}
-
-.link:hover .title {
-  color: var(--accent);
+  &:hover .title {
+    color: var(--accent);
+  }
 }
 
 .meta {
@@ -44,6 +40,23 @@
 .title {
   margin-bottom: 0.5rem;
   transition: color var(--dur-fast) var(--ease-out);
+}
+
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
 }
 
 .description {
