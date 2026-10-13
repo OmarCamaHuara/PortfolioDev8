@@ -1,0 +1,22 @@
+.container {
+  max-width: var(--width-page);
+  margin: 0 auto;
+  padding: var(--sp-12) var(--sp-8);
+
+  @media (max-width: 768px) {
+    padding: var(--sp-8) var(--sp-4);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-6);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--sp-8);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
