@@ -22,10 +22,30 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPost('work', slug);
-  if (!post) return { title: 'Não encontrado' };
+  if (!post) return { title: 'Project not found' };
+
+  const ogImages = post.image
+    ? [{ url: post.image, alt: post.title }]
+    : [{ url: `/work/${post.slug}/opengraph-image`, width: 1200, height: 630, alt: post.title }];
+
   return {
     title: post.title,
     description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+      publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt,
+      url: `/work/${post.slug}`,
+      images: ogImages,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: ogImages.map((img) => img.url),
+    },
   };
 }
 

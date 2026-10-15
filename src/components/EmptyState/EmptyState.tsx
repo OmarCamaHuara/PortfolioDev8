@@ -4,14 +4,14 @@ type Kind = 'writing' | 'work';
 
 const copy: Record<Kind, { title: string; body: string }> = {
   writing: {
-    title: 'Primeiro Post no forno.',
+    title: 'Primeiro artigo em andamento.',
     body:
-      'Estou escrevendo o primeiro texto agora. Assunto: como manter um agente de IA dentro dos trilhos num codebase Java/Spring de verdade. Assina o RSS ali no rodapé se quiser saber quando sair.',
+      'Escrevendo o primeiro post sobre como manter agentes IA de código dentro dos trilhos em bases Java/Spring de produção. Assine o RSS no rodapé para ser notificado.',
   },
   work: {
-    title: 'Primeiro Project Write-up saindo.',
+    title: 'Primeiro projeto sendo documentado.',
     body:
-      'Não vou listar todos os repos do GitHub aqui. Vou publicar narrativas de projetos que mostram problema, decisão, trade-off e resultado. O primeiro é sobre integrar LLMs num backend que já existia — sai em breve.',
+      'Em vez de apenas listar repositórios do GitHub, escrevo narrativas arquiteturais detalhando problemas reais, decisões de design, trade-offs e resultados em produção.',
   },
 };
 

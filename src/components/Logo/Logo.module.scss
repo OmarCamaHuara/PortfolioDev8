@@ -1,22 +1,22 @@
 .logo {
   display: inline-flex;
   align-items: baseline;
-  font-family: var(--font-mono-ui);
+  font-family: var(--ff-mono);
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: var(--fg);
+  color: var(--text);
   line-height: 1;
 }
 
 .sm {
-  font-size: 1rem;
+  font-size: var(--fs-base);
 }
 
 .md {
-  font-size: 1.25rem;
+  font-size: var(--fs-md);
 }
 
-.name[aria-hidden] {
+.name {
   display: inline;
 }
 
@@ -37,7 +37,3 @@
   border: 0;
 }
 
-.logo > .name,
-.logo > .underscore {
-  aria-hidden: true;
-}

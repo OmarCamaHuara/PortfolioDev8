@@ -9,14 +9,14 @@
 .inner {
   max-width: var(--width-page);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding: 0 var(--sp-8);
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   @media (max-width: 768px) {
-    padding: 0 var(--gutter-mobile);
+    padding: 0 var(--sp-4);
     height: 56px;
   }
 }
@@ -24,7 +24,7 @@
 .wordmark {
   display: inline-flex;
   align-items: center;
-  color: var(--fg);
+  color: var(--text);
   transition: opacity var(--dur-fast) var(--ease-out);
 }
 
@@ -32,28 +32,77 @@
   opacity: 0.85;
 }
 
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
 .desktopLinks {
   display: flex;
-  gap: 2rem;
-  font-size: var(--fs-small);
+  gap: var(--sp-6);
+  font-family: var(--ff-mono);
+  font-size: var(--fs-sm);
 
   @media (max-width: 768px) {
     display: none;
   }
 
   a {
-    color: var(--fg-muted);
-  }
+    color: var(--text-muted);
 
-  a:hover {
-    color: var(--accent);
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.openToWork {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--ff-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--success);
+  border-radius: 2px;
+  color: var(--success);
+  text-decoration: none;
+  transition: all var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    background: var(--success);
+    color: var(--bg);
+    text-decoration: none;
+  }
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulseDot {
+    animation: none;
   }
 }
 
 .menuButton {
   display: none;
-  padding: 0.5rem;
-  color: var(--fg);
+  padding: var(--sp-2);
+  color: var(--text);
 
   @media (max-width: 768px) {
     display: flex;
@@ -69,22 +118,23 @@
   right: 0;
   bottom: 0;
   background: var(--bg);
-  padding: 2rem var(--gutter-mobile);
+  padding: var(--sp-8) var(--sp-4);
 
   nav {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: var(--sp-6);
   }
 
   a {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: var(--fg);
-    line-height: 1.1;
+    font-family: var(--ff-serif);
+    font-size: var(--fs-xl);
+    color: var(--text);
+    line-height: var(--lh-tight);
   }
 
   a:hover {
     color: var(--accent);
   }
 }
+

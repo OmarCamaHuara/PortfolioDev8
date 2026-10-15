@@ -6,7 +6,7 @@ priority: P0
 estimate_hours: 0.5
 depends_on: []
 blocks: [P2-RAG-API-01]
-status: pending
+status: done
 ---
 
 # P0-DOC-06 — Write ADR 0007 (backend scope)

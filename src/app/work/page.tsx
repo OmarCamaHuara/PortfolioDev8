@@ -8,7 +8,7 @@ import { getAllPosts } from '@/lib/content';
 import styles from './work.module.scss';
 
 export const metadata: Metadata = {
-  title: 'Work',
+  title: 'Projetos',
   description:
     'Project Write-ups: cada um cobre um projeto real com problema, decisão, trade-off e resultado.',
 };
@@ -21,7 +21,7 @@ export default async function WorkIndex() {
       <Nav />
       <main id="main" className={styles.main}>
         <PageHeader
-          title="Work"
+          title="Projetos"
           lede="Cada Project Write-up abaixo cobre um projeto real: qual era o problema, o que decidi, o que trocaria hoje. Sem card de screenshot — só o essencial."
         />
 

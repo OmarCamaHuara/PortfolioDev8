@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getAllPosts } from '@/lib/content';
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohmar-tai.dev';
+import { SITE_URL } from '@/lib/site';
+import { BRANDING } from '@/lib/branding';
 
 function escape(s: string): string {
   return s
@@ -36,10 +35,10 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Omar Cama — Writing</title>
+    <title>${BRANDING.name} — Artigos</title>
     <link>${SITE_URL}</link>
     <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
-    <description>AI-fluent backend engineer. Posts, Notes, Deep Dives e Project Write-ups.</description>
+    <description>${BRANDING.description}</description>
     <language>pt-BR</language>
 ${items}
   </channel>

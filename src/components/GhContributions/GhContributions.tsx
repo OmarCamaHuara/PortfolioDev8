@@ -50,7 +50,22 @@ type Props = {
 
 export default async function GhContributions({ user }: Props) {
   const data = await fetchContributions(user);
-  if (!data) return null;
+  if (!data) {
+    return (
+      <div className={styles.wrap}>
+        <p className={styles.fallback}>
+          Ver contribuições diretamente no GitHub ·{' '}
+          <a
+            href={`https://github.com/${user}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @{user}
+          </a>
+        </p>
+      </div>
+    );
+  }
 
   const weeks = toWeeks(data.contributions);
   const width = weeks.length * STRIDE - GAP;
@@ -65,7 +80,7 @@ export default async function GhContributions({ user }: Props) {
           height={height}
           viewBox={`0 0 ${width} ${height}`}
           role="img"
-          aria-label={`${total} contribuições no último ano no GitHub de ${user}`}
+          aria-label={`${total} contributions in the last year on GitHub by ${user}`}
           className={styles.grid}
         >
           {weeks.map((week, wi) =>
@@ -84,7 +99,7 @@ export default async function GhContributions({ user }: Props) {
                   ry={2}
                   fill={LEVEL_FILL[day.level]}
                 >
-                  <title>{`${day.date} · ${day.count} contribui${day.count === 1 ? 'ção' : 'ções'}`}</title>
+                  <title>{`${day.date} · ${day.count} contribution${day.count === 1 ? '' : 's'}`}</title>
                 </rect>
               );
             })

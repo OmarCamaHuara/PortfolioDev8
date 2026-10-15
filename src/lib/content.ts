@@ -15,6 +15,7 @@ export type PostMeta = {
   updatedAt?: string;
   lang: 'pt-BR' | 'en';
   description?: string;
+  image?: string;
   tags?: string[];
   readingMinutes: number;
 };
@@ -51,6 +52,7 @@ async function readPost(kind: ContentKind, filename: string): Promise<Post> {
     updatedAt: data.updatedAt,
     lang: data.lang ?? 'pt-BR',
     description: data.description,
+    image: data.image,
     tags: data.tags,
     readingMinutes: Math.ceil(stats.minutes),
     source: content,

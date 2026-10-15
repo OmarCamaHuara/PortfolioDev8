@@ -1,7 +1,6 @@
 import Link from 'next/link';
+import { CONTACT_EMAIL, LINKEDIN_URL, GITHUB_URL } from '@/lib/contact';
 import styles from './Footer.module.scss';
-
-const OMAR_EMAIL = 'omar.js2023@gmail.com';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,11 +12,11 @@ export default function Footer() {
           <h3 className={styles.colTitle}>Contato</h3>
           <ul>
             <li>
-              <a href={`mailto:${OMAR_EMAIL}`}>{OMAR_EMAIL}</a>
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
             </li>
             <li>
               <a
-                href="https://github.com/OmarCamaHuara"
+                href={GITHUB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -26,7 +25,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/in/omar-js/"
+                href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -40,10 +39,16 @@ export default function Footer() {
           <h3 className={styles.colTitle}>Site</h3>
           <ul>
             <li>
-              <Link href="/writing">Writing</Link>
+              <Link href="/writing">Artigos</Link>
             </li>
             <li>
-              <Link href="/work">Work</Link>
+              <Link href="/work">Projetos</Link>
+            </li>
+            <li>
+              <Link href="/labs">Labs</Link>
+            </li>
+            <li>
+              <Link href="/trabalhe-comigo">Trabalhe comigo</Link>
             </li>
             <li>
               <Link href="/rss.xml">RSS</Link>
@@ -56,8 +61,9 @@ export default function Footer() {
       </div>
 
       <div className={styles.baseline}>
-        <p>© {year} Omar Cama Huarahuara. Escrevendo daqui.</p>
+        <p>© {year} Omar Cama Huarahuara. Escrevendo em público.</p>
       </div>
     </footer>
   );
 }
+

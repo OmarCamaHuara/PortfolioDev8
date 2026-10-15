@@ -1,8 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/content';
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ohmar-tai.dev';
+import { SITE_URL } from '@/lib/site';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [writing, work] = await Promise.all([
@@ -14,6 +12,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: SITE_URL, lastModified: new Date() },
     { url: `${SITE_URL}/writing`, lastModified: new Date() },
     { url: `${SITE_URL}/work`, lastModified: new Date() },
+    { url: `${SITE_URL}/labs`, lastModified: new Date() },
+    { url: `${SITE_URL}/trabalhe-comigo`, lastModified: new Date() },
   ];
 
   const writingUrls = writing.map((p) => ({

@@ -27,16 +27,18 @@ export default function PostList({ items, basePath }: Props) {
     <ul className={styles.list}>
       {items.map((post) => (
         <li key={post.slug} className={styles.item}>
-          <Link href={`${basePath}/${post.slug}`} className={`${styles.link} no-underline`}>
-            <div className={styles.meta}>
-              <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-              <span className={styles.type}>{typeLabel[post.type]}</span>
-            </div>
-            <h3 className={styles.title}>{post.title}</h3>
-            {post.description && (
-              <p className={styles.description}>{post.description}</p>
-            )}
-          </Link>
+          <div className={styles.meta}>
+            <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
+            <span className={styles.type}>{typeLabel[post.type]}</span>
+          </div>
+          <h3 className={styles.title}>
+            <Link href={`${basePath}/${post.slug}`} className={`${styles.titleLink} no-underline`}>
+              {post.title}
+            </Link>
+          </h3>
+          {post.description && (
+            <p className={styles.description}>{post.description}</p>
+          )}
         </li>
       ))}
     </ul>

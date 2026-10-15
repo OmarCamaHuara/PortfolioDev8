@@ -6,7 +6,7 @@ priority: P0
 estimate_hours: 0.5
 depends_on: [P0-DOC-05]
 blocks: []
-status: pending
+status: done
 ---
 
 # P0-DOC-07 — Update memory file for visual direction

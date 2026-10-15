@@ -1,50 +1,93 @@
 import type { Metadata } from 'next';
-import { Instrument_Serif, Inter, JetBrains_Mono, Roboto_Mono } from 'next/font/google';
+import { Instrument_Serif, Inter, Roboto_Mono } from 'next/font/google';
 import './globals.scss';
 
-const instrumentSerif = Instrument_Serif({
+const serif = Instrument_Serif({
   subsets: ['latin'],
   weight: '400',
   style: ['normal', 'italic'],
+  variable: '--font-serif',
   display: 'swap',
-  variable: '--font-instrument-serif',
 });
 
-const inter = Inter({
+const sans = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '600'],
+  variable: '--font-sans',
   display: 'swap',
-  variable: '--font-inter',
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  display: 'swap',
-  variable: '--font-jetbrains-mono',
-});
-
-const robotoMono = Roboto_Mono({
+const mono = Roboto_Mono({
   subsets: ['latin'],
   weight: ['400', '500'],
+  variable: '--font-mono',
   display: 'swap',
-  variable: '--font-roboto-mono',
 });
+
+import { SITE_URL } from '@/lib/site';
+import { BRANDING } from '@/lib/branding';
 
 export const metadata: Metadata = {
   title: {
-    default: 'ohmar_tai',
-    template: '%s — ohmar_tai',
+    default: BRANDING.title,
+    template: `%s · ${BRANDING.name}`,
   },
-  description:
-    'Omar Cama — AI-fluent backend engineer. Writing about production systems, LLM integration, and the boring engineering that keeps AI honest.',
-  authors: [{ name: 'Omar Cama Huarahuara' }],
+  description: BRANDING.description,
+  metadataBase: new URL(SITE_URL),
   openGraph: {
-    title: 'ohmar_tai',
-    description:
-      'Omar Cama — AI-fluent backend engineer. Writing about production systems, LLM integration, and the boring engineering that keeps AI honest.',
     type: 'website',
     locale: 'pt_BR',
+    url: SITE_URL,
+    siteName: BRANDING.name,
+    title: BRANDING.title,
+    description: BRANDING.shortDescription,
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: BRANDING.name }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: BRANDING.title,
+    description: BRANDING.shortDescription,
+    images: ['/og-image.png'],
+  },
+  robots: { index: true, follow: true },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: BRANDING.fullName,
+  url: SITE_URL,
+  jobTitle: BRANDING.tagline.replace(/\.$/, ''),
+  worksFor: { '@type': 'Organization', name: 'Premiersoft' },
+  sameAs: [
+    'https://github.com/OmarCamaHuara',
+    'https://linkedin.com/in/omar-cama-huarahuara',
+    'https://youtube.com/@QuERSERSEnior',
+  ],
+  knowsAbout: [
+    'Java',
+    'Spring Boot',
+    'Hexagonal Architecture',
+    'PostgreSQL',
+    'Oracle PL/SQL',
+    'Large Language Models',
+    'Retrieval-Augmented Generation',
+    'Model Context Protocol',
+    'Docker',
+    'Kubernetes',
+    'Backend Engineering',
+    'AI Engineering',
+  ],
+  seeks: {
+    '@type': 'JobPosting',
+    title: 'AI Engineer / LLM Engineer / AI-adjacent Backend',
+    employmentType: ['FULL_TIME', 'CONTRACTOR'],
+    jobLocationType: 'TELECOMMUTE',
+    applicantLocationRequirements: [
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'Brazil' },
+      { '@type': 'Place', name: 'European Union' },
+    ],
   },
 };
 
@@ -56,14 +99,21 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${instrumentSerif.variable} ${inter.variable} ${robotoMono.variable} ${jetbrainsMono.variable}`}
+      className={`${serif.variable} ${sans.variable} ${mono.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <a href="#main" className="skip-to-content">
-          Ir para o conteúdo
+          Pular para o conteúdo principal
         </a>
         {children}
       </body>
     </html>
   );
 }
+
